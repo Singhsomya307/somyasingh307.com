@@ -291,6 +291,11 @@ table td {
 	padding: 5px 10px;
 }
 
+tr td a {
+    color: white; /* Make the link color white */
+    text-decoration: none; /* Remove underline from link */
+}
+
 @media (max-width: 768px) {
     .about .about-content {
         flex-direction: column; /* Stack items vertically on small screens */
