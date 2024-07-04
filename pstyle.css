@@ -37,45 +37,24 @@ body {
 }
 
 .project-card {
-  flex: 0 0 calc(33.3333% - 20px);
-  max-width: calc(33.3333% - 20px);
-  margin: 0 10px;
+  flex: 0 0 calc(33.3333% - 20px); /* Adjusted width calculation with margin */
+  max-width: calc(33.3333% - 20px); /* Adjusted max-width calculation with margin */
+  margin: 0 10px; /* Space between project cards */
   box-sizing: border-box;
-  padding: 0;
+  padding: 0; 
   background: #fff;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   height: 200px;
   border-radius: 10px;
   overflow: hidden;
-  transition: all 0.4s;
-  position: relative; /* Added relative positioning */
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .project-card:hover {
-  box-shadow: 0px 3px 12px 0px #ffbf35;
-  background: #ffbf35;
-  border: 1px solid transparent;
-  transform: scale(1.2); /* Changed to transform for scaling */
-  transition: transform 0.25s ease-in, opacity 0.25s ease-in, filter 0.25s ease-in;
-}
-
-.project-card::before {
-  content: '';
-  position: absolute;
-  width: calc(100% + 22px); /* Adjusted width to cover padding and border */
-  height: calc(100% + 22px); /* Adjusted height to cover padding and border */
-  top: -11px; /* Adjusted to align correctly */
-  left: -11px; /* Adjusted to align correctly */
+  transform: scale(0.9);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   border-radius: 10px;
-  background-color: transparent;
-  border: 1px solid transparent;
-  transition: all 0.4s;
-  pointer-events: none; /* Ensures hover events still apply to the project-card */
-}
-
-.project-card:hover::before {
-  background-color: rgba(255, 191, 53, 0.2); /* Semi-transparent color */
-  border: 2px solid #ffbf35; /* Border color */
+  background-color: #ffbf35;
 }
 
 .project-card img {
@@ -116,7 +95,7 @@ body {
 }
 .scroll-button {
   position: fixed;
-  top: 45%;
+  top: 55%;
   transform: translateY(-50%);
   background: rgba(0,0,0,0.5);
   color: white;
