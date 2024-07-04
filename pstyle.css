@@ -1,0 +1,150 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #0e0e0e;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.project {
+  text-align: center;
+  padding: 50px 0;
+}
+
+.project .title {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #ffbf35;
+}
+
+.project-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.project-scroll {
+  display: flex;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  transition: transform 0.3s ease;
+}
+
+.project-card {
+  flex: 0 0 calc(33.3333% - 20px);
+  max-width: calc(33.3333% - 20px);
+  margin: 0 10px;
+  box-sizing: border-box;
+  padding: 0;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  height: 200px;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.4s;
+  position: relative; /* Added relative positioning */
+}
+
+.project-card:hover {
+  box-shadow: 0px 3px 12px 0px #ffbf35;
+  background: #ffbf35;
+  border: 1px solid transparent;
+  transform: scale(1.2); /* Changed to transform for scaling */
+  transition: transform 0.25s ease-in, opacity 0.25s ease-in, filter 0.25s ease-in;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  width: calc(100% + 22px); /* Adjusted width to cover padding and border */
+  height: calc(100% + 22px); /* Adjusted height to cover padding and border */
+  top: -11px; /* Adjusted to align correctly */
+  left: -11px; /* Adjusted to align correctly */
+  border-radius: 10px;
+  background-color: transparent;
+  border: 1px solid transparent;
+  transition: all 0.4s;
+  pointer-events: none; /* Ensures hover events still apply to the project-card */
+}
+
+.project-card:hover::before {
+  background-color: rgba(255, 191, 53, 0.2); /* Semi-transparent color */
+  border: 2px solid #ffbf35; /* Border color */
+}
+
+.project-card img {
+  width: 100%;
+  height: auto;
+}
+
+.project-card h3 {
+  font-size: 1.2em;
+  margin: 10px;
+  color: #333;
+}
+
+.project-card p {
+  font-size: 1em;
+  margin: 10px;
+  color: #666;
+}
+
+
+
+
+.more-info {
+  text-align: center;
+  margin-top: 20px;
+  color: #464545;
+  font-size: 1.2em;
+}
+
+.more-info a {
+  color: #464545;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.more-info a:hover {
+  text-decoration: underline;
+}
+.scroll-button {
+  position: fixed;
+  top: 45%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.scroll-button.left {
+  left: 0;
+}
+
+.scroll-button.right {
+  right: 0;
+}
+
+
+@media (max-width: 1024px) {
+  .project-card {
+    flex: 0 0 calc(50% - 20px);
+    max-width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 768px) {
+  .project-card {
+    flex: 0 0 calc(100% - 20px);
+    max-width: calc(100% - 20px);
+  }
+}
